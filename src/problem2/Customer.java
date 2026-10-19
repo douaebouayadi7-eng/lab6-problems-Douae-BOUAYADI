@@ -3,10 +3,13 @@ import java.util.ArrayList;
 
 public class Customer {
     private String name;
-    private ArrayList<Double> transactions= new ArrayList<>();
-    public Customer( String n, ArrayList<Double> t){
+    private ArrayList<Double> transactions;
+    public Customer( String n){
         this.name= n;
-        this.transactions= t;
+        this.transactions= new ArrayList<>();
+    }
+    public String getName(){
+        return name;
     }
     public void credit(double amount){
         transactions.add(amount);
