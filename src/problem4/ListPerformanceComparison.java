@@ -21,15 +21,15 @@ public class ListPerformanceComparison {
             linkedList.add(i);
         }
 
-        // 2️⃣ Random insertions and deletions
+        // 2️Random insertions and deletions
         testRandomInsertDelete(arrayList, "ArrayList");
         testRandomInsertDelete(linkedList, "LinkedList");
 
-        // 3️⃣ Sequential insertions/deletions at beginning and end
+        // 3️Sequential insertions/deletions at beginning and end
         testSequentialInsertDelete(arrayList, "ArrayList");
         testSequentialInsertDelete(linkedList, "LinkedList");
 
-        // 4️⃣ Random access test
+        // 4️ Random access test
         testRandomAccess(arrayList, "ArrayList");
         testRandomAccess(linkedList, "LinkedList");
     }
