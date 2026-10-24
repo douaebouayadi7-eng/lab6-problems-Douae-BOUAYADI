@@ -59,12 +59,36 @@ public class ListPerformanceComparison {
         long start = System.nanoTime();
 
         // Insertions at beginning and end
+        if (list instanceof LinkedList) {
+            LinkedList<Integer> ll = (LinkedList<Integer>) list;
+            for (int i = 0; i < OPERATIONS; i++) {
+                ll.addFirst(i);
+                ll.addLast(i);
+            }
+        } else {
+            for (int i = 0; i < OPERATIONS; i++) {
+                list.add(0, i);
+                list.add(i);
+            }
+        }
 
         // add your code here
 
         // Deletions at beginning and end
 
         // add your code here
+        if (list instanceof LinkedList) {
+            LinkedList<Integer> ll = (LinkedList<Integer>) list;
+            for (int i = 0; i < OPERATIONS; i++) {
+                ll.removeFirst();
+                ll.removeLast();
+            }
+        } else {
+            for (int i = 0; i < OPERATIONS; i++) {
+                list.remove(0);
+                list.remove(list.size() - 1);
+            }
+        }
 
         long end = System.nanoTime();
         System.out.printf("%s - Sequential insert/delete (start/end): %.3f ms%n",
