@@ -28,8 +28,11 @@ public class Library {
         }
         return null;
     }
-
-
-
-
+    public void displayAuthors(){
+        for (Document d: documents){
+            if (d instanceof Book){
+                System.out.println(((Book) d).getAuthor());
+            }
+        }
+    }
 }
