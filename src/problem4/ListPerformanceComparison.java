@@ -105,6 +105,9 @@ public class ListPerformanceComparison {
         // sum of the all elements in the list
        // insert your code here
 
+        for (int i = 0; i < OPERATIONS; i++) {
+            sum += list.get(random.nextInt(list.size()));
+        }
         long end = System.nanoTime();
         System.out.printf("%s - Random access (get): %.3f ms%n",
                 name, (end - start) / 1_000_000.0);
